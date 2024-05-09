@@ -9,9 +9,19 @@ git clone https://github.com/b06901089/R11921098_THESIS.git
 cd R11921098_THESIS/
 ```
 
-CLone [mAP](<https://github.com/Cartucho/mAP>) inside the repo
+Clone [mAP](<https://github.com/Cartucho/mAP>) inside the repo
 ```
 git clone https://github.com/Cartucho/mAP
+```
+
+Clone [BasicVSR++](<https://github.com/ckkelvinchan/BasicVSR_PlusPlus>) inside the repo
+```
+git clone https://github.com/ckkelvinchan/BasicVSR_PlusPlus.git
+```
+
+Overwrite a file
+```
+cp restoration_video_demo.py BasicVSR_PlusPlus/demo/
 ```
 
 ### Dataset
