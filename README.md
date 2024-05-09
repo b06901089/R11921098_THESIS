@@ -3,6 +3,17 @@ Bandwidth-Efficient Inferencing at the Edge -- An Experimental Approach to Analy
 
 ## Setup
 
+Clone this repository
+```
+git clone https://github.com/b06901089/R11921098_THESIS.git
+cd R11921098_THESIS/
+```
+
+CLone [mAP](<https://github.com/Cartucho/mAP>) inside the repo
+```
+git clone https://github.com/Cartucho/mAP
+```
+
 ### Dataset
 We are using [Inter4K](<https://github.com/alexandrosstergiou/Inter4K>) dataset. 
 Download the dataset with the link [https://tinyurl.com/inter4KUHD](<https://tinyurl.com/inter4KUHD>) from the official repository.
