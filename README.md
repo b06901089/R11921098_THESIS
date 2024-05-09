@@ -114,6 +114,7 @@ Then, run mode=Get Low Quality 11 times for 11 different CRF values as well for 
 ### Code Reference
 
 ```
+https://github.com/alexandrosstergiou/Inter4K
 https://github.com/Lornatang/FSRCNN-PyTorch
 https://github.com/Cartucho/mAP
 https://github.com/ckkelvinchan/BasicVSR_PlusPlus
