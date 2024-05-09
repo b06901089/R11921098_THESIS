@@ -22,6 +22,7 @@ git clone https://github.com/ckkelvinchan/BasicVSR_PlusPlus.git
 Overwrite a file
 ```
 cp restoration_video_demo.py BasicVSR_PlusPlus/demo/
+cp -r chkpts/ BasicVSR_PlusPlus/
 ```
 
 ### Dataset
