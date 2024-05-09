@@ -50,7 +50,7 @@ pip install ffmpeg
 
 Next, we are going to create a virtual environments for [BasicVSR++](<https://github.com/ckkelvinchan/BasicVSR_PlusPlus>).
 Since mmcv depends very heavily on the version of pytorch and cuda.
-I will be using specific CUDA 11.8 and specific torch versions when installing mmcv.
+I will be using specific CUDA 11.8 and specific Pytorch versions when installing mmcv.
 ```
 conda create --name basicvsr python=3.8
 conda activate basicvsr
@@ -66,7 +66,6 @@ pip install -v -e .
 
 We are using [Inter4K](<https://github.com/alexandrosstergiou/Inter4K>) dataset. 
 Download the dataset with the link [https://tinyurl.com/inter4KUHD](<https://tinyurl.com/inter4KUHD>) from the official repository.
-
 Unzip it at wherever you want to save it.
 ```
 unzip Inter4K.zip -d Inter4K
@@ -98,4 +97,16 @@ For example,
 python run.py --cfg config/get_ground_truth.json
 ```
 
-About all the parameter in the config files, please refer to config/parameter.py for more information
+About the parameters in the config files, please refer to `config/parameter.py` for more information.
+
+The results will be recorded in the log files.
+
+![alt text](https://github.com/b06901089/R11921098_THESIS/blob/main/image/sample.png?raw=true)
+
+For example, in order to produce one figure above.
+
+I have first to run mode=Get Ground Truth 1 time
+
+Then, run mode=Get High Quality 11 times for 11 different CRF values to get the purple line.
+
+Then, run mode=Get Low Quality 11 times for 11 different CRF values as well for other four lines.
