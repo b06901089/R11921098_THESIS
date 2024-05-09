@@ -4,3 +4,7 @@ BasicVSR_PlusPlus/
 
 # YOLO model
 *.pt
+
+# Output
+My_output/*
+My_log/*
