@@ -1,3 +1,6 @@
 # Other Repo
 mAP/
 BasicVSR_PlusPlus/
+
+# YOLO model
+*.pt

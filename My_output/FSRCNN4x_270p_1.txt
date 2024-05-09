@@ -1,0 +1,68 @@
+# AP and precision/recall per class
+0.00% = 0.0 AP 
+ Precision: ['0.00', '0.00', '0.00', '0.00']
+ Recall :['0.00', '0.00', '0.00', '0.00']
+
+0.00% = 2.0 AP 
+ Precision: ['0.00', '0.00', '0.00', '0.00', '0.00']
+ Recall :['0.00', '0.00', '0.00', '0.00', '0.00']
+
+0.00% = 37.0 AP 
+ Precision: []
+ Recall :[]
+
+0.00% = 41.0 AP 
+ Precision: ['0.00']
+ Recall :['0.00']
+
+0.00% = 42.0 AP 
+ Precision: []
+ Recall :[]
+
+0.00% = 44.0 AP 
+ Precision: []
+ Recall :[]
+
+0.00% = 51.0 AP 
+ Precision: []
+ Recall :[]
+
+0.00% = 58.0 AP 
+ Precision: []
+ Recall :[]
+
+0.00% = 76.0 AP 
+ Precision: []
+ Recall :[]
+
+0.00% = 8.0 AP 
+ Precision: ['0.00', '0.00']
+ Recall :['0.00', '0.00']
+
+
+# mAP of all classes
+mAP = 0.00%
+
+# Number of ground-truth objects per class
+0.0: 1
+2.0: 4
+37.0: 1
+41.0: 1
+42.0: 20
+44.0: 19
+51.0: 3
+58.0: 5
+76.0: 48
+8.0: 2
+
+# Number of detected objects per class
+0.0: 4 (tp:0, fp:4)
+10.0: 8 (tp:0, fp:8)
+2.0: 5 (tp:0, fp:5)
+41.0: 1 (tp:0, fp:1)
+47.0: 2 (tp:0, fp:2)
+49.0: 2 (tp:0, fp:2)
+54.0: 9 (tp:0, fp:9)
+55.0: 79 (tp:0, fp:79)
+75.0: 40 (tp:0, fp:40)
+8.0: 2 (tp:0, fp:2)

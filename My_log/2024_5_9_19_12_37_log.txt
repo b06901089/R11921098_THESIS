@@ -17,3 +17,35 @@ log_name: ./My_log/2024_5_9_19_12_37_log.txt
 
 bitrates: 0.232512M
 
+BI4x_270p:
+frame count: 299
+average PSNR: 34.25812486442944
+
+FSRCNN4x_270p:
+frame count: 299
+average PSNR: 34.09465721971628
+
+BasicVSRplusplus_VSRx4_270p:
+../../Datasets/Inter4K/Inter4K_frame/60fps/1080p/1, ../../Datasets/Inter4K/Inter4K_frame/60fps/BasicVSRplusplus_VSRx4_270p/1
+length: 299, 0
+frame count: 0
+
+
+##########
+270p, average mAP: 0.0, video count: 1
+##########
+
+
+##########
+BI4x_270p, average mAP: 0.0, video count: 1
+##########
+
+
+##########
+FSRCNN4x_270p, average mAP: 0.0, video count: 1
+##########
+
+
+##########
+BasicVSRplusplus_VSRx4_270p, average mAP: 0.0, video count: 1
+##########
