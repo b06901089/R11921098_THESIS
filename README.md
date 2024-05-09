@@ -30,8 +30,8 @@ cp -r chkpts/ BasicVSR_PlusPlus/
 ---
 
 We are going to create two virtual environments. 
-Feel free to use your own environments.
-It will be fine as long as YOLOv5 is working.
+Feel free to use your own environments for the first one.
+It will be fine as long as YOLOv5 and FFmpeg is working.
 
 ```
 conda create --name python3.8 python=3.8
@@ -43,14 +43,14 @@ Install requirement for YOLOv5.
 pip install -r requirements.txt
 ```
 
-Install FFmpeg.
+Install FFmpeg. It might require ffmpeg>=4.4 version.
 ```
 pip install ffmpeg
 ```
 
-Next, we are going to create a virtual environments for BasicVSR.
-Since mmcv depends on the version of pytorch and cuda very heavily.
-I will be using specific CUDA 11.8 when installing mmcv.
+Next, we are going to create a virtual environments for [BasicVSR++](<https://github.com/ckkelvinchan/BasicVSR_PlusPlus>).
+Since mmcv depends very heavily on the version of pytorch and cuda.
+I will be using specific CUDA 11.8 and specific torch versions when installing mmcv.
 ```
 conda create --name basicvsr python=3.8
 conda activate basicvsr
@@ -97,3 +97,5 @@ For example,
 ```
 python run.py --cfg config/get_ground_truth.json
 ```
+
+About all the parameter in the config files, please refer to config/parameter.py for more information
