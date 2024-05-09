@@ -101,12 +101,22 @@ About the parameters in the config files, please refer to `config/parameter.py` 
 
 The results will be recorded in the log files.
 
-![alt text](https://github.com/b06901089/R11921098_THESIS/blob/main/image/sample.png?raw=true)
+![plot](https://github.com/b06901089/R11921098_THESIS/blob/main/image/example.png?raw=true)
 
-For example, in order to produce one figure above.
+For example, in order to produce this figure above.
 
-I have first to run mode=Get Ground Truth 1 time
+I will have first to run mode=Get Ground Truth 1 time.
 
 Then, run mode=Get High Quality 11 times for 11 different CRF values to get the purple line.
 
 Then, run mode=Get Low Quality 11 times for 11 different CRF values as well for other four lines.
+
+### Code Reference
+
+```
+https://github.com/Lornatang/FSRCNN-PyTorch
+https://github.com/Cartucho/mAP
+https://github.com/ckkelvinchan/BasicVSR_PlusPlus
+```
+
+All other necessary citations can be found in the original thesis. Thank you!

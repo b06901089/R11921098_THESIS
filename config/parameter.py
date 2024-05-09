@@ -77,9 +77,8 @@ p = {
     'qp':       -1,
     'inter':    '../../Datasets/Inter4K',
     'res':      '1080p',
-    'name':     '1080p_CRF30',
+    'name':     '1080pHQ',
     # In 'Get High Quality' mode, add notation to prevent having the same name as GT folder
-    # Ex: 720p_CRF30, 540p_, 1080p^^,
     'GT_name':  '1080p',
 
 }
