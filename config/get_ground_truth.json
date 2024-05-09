@@ -8,5 +8,8 @@
   "qp": -1,
   "inter": "../../Datasets/Inter4K",
   "res": "1080p",
-  "name": "1080p"
+  "name": "1080p",
+  "GT_name": "",
+  "pyenv": "python3.8",
+  "vsrenv": "basicvsr"
 }

@@ -6,8 +6,9 @@ end=$3
 inter=$4
 name=$5
 log=$6
+pyenv=$7
 
-conda activate python3.8
+conda activate ${pyenv}
 
 for i in $(seq $start $end);
 do

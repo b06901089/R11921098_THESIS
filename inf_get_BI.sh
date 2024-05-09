@@ -7,8 +7,9 @@ inter=$4
 LR_folder=$5
 HR_folder=$6
 log=$7
+pyenv=$8
 
-conda activate python3.8
+conda activate ${pyenv}
 
 # Get nHD & BI4x inference results
 for i in $(seq $start $end);

@@ -7,8 +7,9 @@ inter=$4
 LQ_folder=$5
 HQ_folder=$6
 log=$7
+pyenv=$8
 
-conda activate python3.8
+conda activate ${pyenv}
 
 for i in $(seq $start $end);
 do

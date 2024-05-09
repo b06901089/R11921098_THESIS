@@ -9,5 +9,7 @@
   "inter": "../../Datasets/Inter4K",
   "res": "1080p",
   "name": "1080p_CRF30",
-  "GT_name": "1080p"
+  "GT_name": "1080p",
+  "pyenv": "python3.8",
+  "vsrenv": "basicvsr"
 }

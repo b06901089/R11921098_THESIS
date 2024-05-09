@@ -7,8 +7,10 @@ inter=$4
 LR_folder=$5
 HR_folder=$6
 log=$7
+pyenv=$8
+vsrenv=$9
 
-conda activate python3.8
+conda activate ${pyenv}
 
 # Seperate frames for BasicVSR++ inference
 for i in $(seq $start $end);
@@ -19,7 +21,7 @@ done
 
 # Get BasicVSR++ inference data
 
-conda activate basicvsr
+conda activate ${vsrenv}
 
 for i in $(seq $start $end);
 do
@@ -30,8 +32,6 @@ done
 conda deactivate
 
 # Get BasicVSR++ inference results
-
-conda activate python3.8
 
 for i in $(seq $start $end);
 do

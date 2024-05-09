@@ -34,7 +34,7 @@ def set_log(p):
 def get_data(p):
 
     if p['crf'] >= 0 and p['crf'] <= 51:
-        os.system('bash inf_get_data.sh {} {} {} {} {} {} {} {} {}'.format(
+        os.system('bash inf_get_data.sh {} {} {} {} {} {} {} {} {} {}'.format(
             p['source'], 
             p['start'], 
             p['end'], 
@@ -44,9 +44,10 @@ def get_data(p):
             p['res'],
             p['name'],
             p['log_name'],
+            p['pyenv'],
         ))
     elif p['qp'] >= 0 and p['qp'] <= 51:
-        os.system('bash inf_get_data.sh {} {} {} {} {} {} {} {} {}'.format(
+        os.system('bash inf_get_data.sh {} {} {} {} {} {} {} {} {} {}'.format(
             p['source'], 
             p['start'], 
             p['end'], 
@@ -56,6 +57,7 @@ def get_data(p):
             p['res'],
             p['name'],
             p['log_name'],
+            p['pyenv'],
         ))
     else:
         print('Error: Incorrect Parameter (CRF/QP) Settings!')
@@ -64,18 +66,19 @@ def get_data(p):
 
 def get_bitrate(p):
 
-    os.system('bash inf_get_bitrate.sh {} {} {} {} {} {}'.format(
+    os.system('bash inf_get_bitrate.sh {} {} {} {} {} {} {}'.format(
         p['source'], 
         p['start'], 
         p['end'], 
         p['inter'],
         p['name'],
         p['log_name'],
+        p['pyenv'],
     ))
 
 def get_BI(p):
 
-    os.system('bash inf_get_BI.sh {} {} {} {} {} {} {}'.format(
+    os.system('bash inf_get_BI.sh {} {} {} {} {} {} {} {}'.format(
         p['source'], 
         p['start'], 
         p['end'], 
@@ -83,11 +86,12 @@ def get_BI(p):
         p['name'],
         p['GT_name'],
         p['log_name'],
+        p['pyenv'],
     ))
 
 def get_FSRCNN(p):
 
-    os.system('bash inf_get_FSRCNN.sh {} {} {} {} {} {} {}'.format(
+    os.system('bash inf_get_FSRCNN.sh {} {} {} {} {} {} {} {}'.format(
         p['source'], 
         p['start'], 
         p['end'], 
@@ -95,11 +99,12 @@ def get_FSRCNN(p):
         p['name'],
         p['GT_name'],
         p['log_name'],
+        p['pyenv'],
     ))
 
 def get_BasicVSR(p):
 
-    os.system('bash inf_get_BasicVSR.sh {} {} {} {} {} {} {}'.format(
+    os.system('bash inf_get_BasicVSR.sh {} {} {} {} {} {} {} {} {}'.format(
         p['source'], 
         p['start'], 
         p['end'], 
@@ -107,11 +112,13 @@ def get_BasicVSR(p):
         p['name'],
         p['GT_name'],
         p['log_name'],
+        p['pyenv'],
+        p['vsrenv'],
     ))
 
 def get_inference(p):
 
-    os.system('bash inference.sh {} {} {} {} {} {} {}'.format(
+    os.system('bash inference.sh {} {} {} {} {} {} {} {}'.format(
         p['source'], 
         p['start'], 
         p['end'], 
@@ -119,11 +126,12 @@ def get_inference(p):
         p['name'],
         p['GT_name'],
         p['log_name'],
+        p['pyenv'],
     ))
 
 def get_HQ(p):
 
-    os.system('bash inf_get_HQ.sh {} {} {} {} {} {} {}'.format(
+    os.system('bash inf_get_HQ.sh {} {} {} {} {} {} {} {}'.format(
         p['source'], 
         p['start'], 
         p['end'], 
@@ -131,6 +139,7 @@ def get_HQ(p):
         p['name'],
         p['GT_name'],
         p['log_name'],
+        p['pyenv'],
     ))
 
 
@@ -157,8 +166,8 @@ if __name__ == '__main__':
         set_log(p)     
         get_data(p)
         get_bitrate(p)
-        get_BI(p)
-        get_FSRCNN(p)
+        # get_BI(p)
+        # get_FSRCNN(p)
         get_BasicVSR(p)
         get_inference(p)
 
