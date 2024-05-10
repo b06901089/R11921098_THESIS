@@ -158,20 +158,23 @@ if __name__ == '__main__':
 
 
     if p['mode'] == 'Get Ground Truth':
+        p['name'] = p['res']
         set_log(p) 
         get_data(p)
         get_bitrate(p)
 
     if p['mode'] == 'Get Low Quality':
+        p['name'] = p['res']
         set_log(p)     
         get_data(p)
         get_bitrate(p)
-        # get_BI(p)
-        # get_FSRCNN(p)
+        get_BI(p)
+        get_FSRCNN(p)
         get_BasicVSR(p)
         get_inference(p)
 
     if p['mode'] == 'Get High Quality':
+        p['name'] = p['res'] + '_cp'
         set_log(p)
         get_data(p)
         get_bitrate(p)

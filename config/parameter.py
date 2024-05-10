@@ -39,10 +39,12 @@ p = {
     'res':      '1080p',
     # Usage: Target resolution, please refer to 'resolution_map' for more options
     # 4K, 2K, 1080p, 720p, 540p, 360p, 270p, 180p
-    'name':     '1080p',
-    # Folder name of the transcode videos and video frames, recommend to just use the same name as paramter 'res' when getting ground truth.
     'GT_name':  '',
     # Not used in this mode
+    'pyenv': 'python3.8',
+    # Conda env name for YOLOv5 and FFmpeg
+    'vsrenv': 'basicvsr',
+    # Conda env name for BasicVSR++
 }
 
 # Get Low Quality
@@ -57,12 +59,11 @@ p = {
     'qp':       -1,
     'inter':    '../../Datasets/Inter4K',
     'res':      '270p',
-    'name':     '270p',
     'GT_name':  '1080p',
-    # Folder name of the ground truth videos, the resolution should be 4x of the low quality videos
-    # "GT_name" should not be the same as "name"
-    # "GT_name" should be set to the folder name of the ground truth (i.e. 'name' in 'Get Ground Truth')
-
+    # Resolution of ground truth, the resolution should be 4x of the low quality videos
+    # (i.e. 'GT_name' should equal to 'res' in 'Get Ground Truth')
+    'pyenv': 'python3.8',
+    'vsrenv': 'basicvsr',
 }
 
 # Get High Quality
@@ -77,8 +78,7 @@ p = {
     'qp':       -1,
     'inter':    '../../Datasets/Inter4K',
     'res':      '1080p',
-    'name':     '1080pHQ',
-    # In 'Get High Quality' mode, add notation to prevent having the same name as GT folder
     'GT_name':  '1080p',
-
+    'pyenv': 'python3.8',
+    'vsrenv': 'basicvsr',
 }
