@@ -84,7 +84,7 @@ def get_BI(p):
         p['end'], 
         p['inter'],
         p['name'],
-        p['GT_name'],
+        p['GT_res'],
         p['log_name'],
         p['pyenv'],
     ))
@@ -97,7 +97,7 @@ def get_FSRCNN(p):
         p['end'], 
         p['inter'],
         p['name'],
-        p['GT_name'],
+        p['GT_res'],
         p['log_name'],
         p['pyenv'],
     ))
@@ -110,7 +110,7 @@ def get_BasicVSR(p):
         p['end'], 
         p['inter'],
         p['name'],
-        p['GT_name'],
+        p['GT_res'],
         p['log_name'],
         p['pyenv'],
         p['vsrenv'],
@@ -124,7 +124,7 @@ def get_inference(p):
         p['end'], 
         p['inter'],
         p['name'],
-        p['GT_name'],
+        p['GT_res'],
         p['log_name'],
         p['pyenv'],
     ))
@@ -137,10 +137,35 @@ def get_HQ(p):
         p['end'], 
         p['inter'],
         p['name'],
-        p['GT_name'],
+        p['GT_res'],
         p['log_name'],
         p['pyenv'],
     ))
+
+def Get_Ground_Truth(p):
+    p['name'] = p['res']
+    set_log(p) 
+    get_data(p)
+    get_bitrate(p)
+
+def Get_Low_Quality(p):
+    p['name'] = p['res']
+    set_log(p)     
+    get_data(p)
+    get_bitrate(p)
+    get_BI(p)
+    get_FSRCNN(p)
+    get_BasicVSR(p)
+    get_inference(p)
+
+def Get_High_Quality(p):
+    p['name'] = p['res'] + '_cp'
+    set_log(p)
+    get_data(p)
+    get_bitrate(p)
+    get_HQ(p)
+    get_inference(p)
+
 
 
 if __name__ == '__main__':
@@ -158,25 +183,73 @@ if __name__ == '__main__':
 
 
     if p['mode'] == 'Get Ground Truth':
-        p['name'] = p['res']
-        set_log(p) 
-        get_data(p)
-        get_bitrate(p)
+        Get_Ground_Truth(p)
 
-    if p['mode'] == 'Get Low Quality':
-        p['name'] = p['res']
-        set_log(p)     
-        get_data(p)
-        get_bitrate(p)
-        get_BI(p)
-        get_FSRCNN(p)
-        get_BasicVSR(p)
-        get_inference(p)
+    elif p['mode'] == 'Get Low Quality':
+        Get_Low_Quality(p)
 
-    if p['mode'] == 'Get High Quality':
-        p['name'] = p['res'] + '_cp'
-        set_log(p)
-        get_data(p)
-        get_bitrate(p)
-        get_HQ(p)
-        get_inference(p)
+    elif p['mode'] == 'Get High Quality':
+        Get_High_Quality(p)
+
+    elif p['mode'] == 'Inference':
+        tmp_crf = p['crf']
+        tmp_qp = p['qp']
+        tmp_res = p['res']
+        tmp_GT = p['GT_res']
+
+        # Log Naming
+        run_idx = 0
+        while os.path.isdir(os.path.join(p['log'], f'run{run_idx}')):
+            run_idx += 1
+        p['log'] = os.path.join(p['log'], f'run{run_idx}')
+        pathlib.Path(p['log']).mkdir(parents=True, exist_ok=True)
+
+        # CRF
+        if p['crf'] != -1:
+
+            p['mode'] = 'Get Ground Truth'
+            p['res'] = tmp_GT
+            p['crf'] = 0
+            Get_Ground_Truth(p)
+
+            p['mode'] = 'Get Low Quality'
+            p['res'] = tmp_res
+            p['GT_res'] = tmp_GT
+            
+            for crf in tmp_crf:
+                p['crf'] = crf
+                Get_Low_Quality(p)
+
+            p['mode'] = 'Get High Quality'
+            p['res'] = tmp_GT
+
+            for crf in tmp_crf:
+                # CRF = 0 is ground truth
+                if crf != 0:
+                    p['crf'] = crf
+                    Get_High_Quality(p)
+
+        # CQP
+        elif p['qp'] != -1:
+
+            p['mode'] = 'Get Ground Truth'
+            p['res'] = tmp_GT
+            p['qp'] = 0
+            Get_Ground_Truth(p)
+
+            p['mode'] = 'Get Low Quality'
+            p['res'] = tmp_res
+            p['GT_res'] = tmp_GT
+            
+            for qp in tmp_qp:
+                p['qp'] = qp
+                Get_Low_Quality(p)
+
+            p['mode'] = 'Get High Quality'
+            p['res'] = tmp_GT
+
+            for qp in tmp_crf:
+                # CQP = 0 is ground truth
+                if qp != 0:
+                    p['qp'] = qp
+                    Get_High_Quality(p)

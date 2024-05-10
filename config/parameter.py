@@ -1,3 +1,7 @@
+# Detail explanation of other example json files
+# Only 4x SR ratio is supported
+# i.e. (4K, 540p), (2K, 360p), (1080p, 270p), (720p, 180p)
+
 # resolution_map = {
 #     '4K':   [3840, 2160],
 #     '2K':   [2560, 1440],
@@ -39,11 +43,11 @@ p = {
     'res':      '1080p',
     # Usage: Target resolution, please refer to 'resolution_map' for more options
     # 4K, 2K, 1080p, 720p, 540p, 360p, 270p, 180p
-    'GT_name':  '',
+    'GT_res':   '',
     # Not used in this mode
-    'pyenv': 'python3.8',
+    'pyenv':    'python3.8',
     # Conda env name for YOLOv5 and FFmpeg
-    'vsrenv': 'basicvsr',
+    'vsrenv':   'basicvsr',
     # Conda env name for BasicVSR++
 }
 
@@ -59,11 +63,11 @@ p = {
     'qp':       -1,
     'inter':    '../../Datasets/Inter4K',
     'res':      '270p',
-    'GT_name':  '1080p',
+    'GT_res':   '1080p',
     # Resolution of ground truth, the resolution should be 4x of the low quality videos
-    # (i.e. 'GT_name' should equal to 'res' in 'Get Ground Truth')
-    'pyenv': 'python3.8',
-    'vsrenv': 'basicvsr',
+    # (i.e. 'GT_res' should equal to 'res' in 'Get Ground Truth')
+    'pyenv':    'python3.8',
+    'vsrenv':   'basicvsr',
 }
 
 # Get High Quality
@@ -78,7 +82,27 @@ p = {
     'qp':       -1,
     'inter':    '../../Datasets/Inter4K',
     'res':      '1080p',
-    'GT_name':  '1080p',
-    'pyenv': 'python3.8',
-    'vsrenv': 'basicvsr',
+    'GT_res':   '1080p',
+    'pyenv':    'python3.8',
+    'vsrenv':   'basicvsr',
+}
+
+# Inference
+p = {
+
+    'mode':     'Inference',
+    'log':      './My_log',
+    # All logs of a single 'mode'='Inference' run will be stored in an indivisual folder inside 'log' folder
+    'source':   '/home/aaron/miniconda3/etc/profile.d/conda.sh',
+    'start':    1,
+    'end':      1,
+    'crf':      [0,2,5,7,10,15,20,25,30,35,40],
+    # All the CRF value you want to run in a complete experiment
+    'qp':       -1,
+    # Or All the CQP value you want to run in a complete experiment
+    'inter':    '../../Datasets/Inter4K',
+    'res':      '270p',
+    'GT_res':   '1080p',
+    'pyenv':    'python3.8',
+    'vsrenv':   'basicvsr',
 }

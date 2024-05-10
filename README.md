@@ -97,7 +97,7 @@ For example,
 python run.py --cfg config/get_ground_truth.json
 ```
 
-About the parameters in the config files, please refer to `config/parameter.py` for more information.
+About the parameters in the config files, please refer to `config/parameter.py` and `config/*.json` for more information.
 
 The results will be recorded in the log files.
 
@@ -110,6 +110,10 @@ I will have first to run mode=Get Ground Truth 1 time.
 Then, run mode=Get High Quality 11 times for 11 different CRF values to get the purple line.
 
 Then, run mode=Get Low Quality 11 times for 11 different CRF values as well for other four lines.
+
+Or, You can run mode=Inference in only one command.
+
+Again, please do check `config/parameter.py` and `config/*.json` for more information.
 
 ### Code Reference
 
